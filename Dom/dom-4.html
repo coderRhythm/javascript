@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="language">
+        <ul>
+            <li>
+                javascrupt
+            </li>
+        </ul>
+    </div>
+</body>
+
+<script>
+    function addLanguage(lang)
+    {
+        const li = document.createElement('li')
+        li.innerHTML = `${lang}`
+        document.querySelector('.language>ul').appendChild(li)
+    }
+
+    addLanguage('python')
+
+    // now we add the langage in a optimization way
+    function addOptimizationWay(lang)
+    {
+        const li = document.createElement('li')
+        const li_text = document.createTextNode(`${lang}`)
+        li.appendChild(li_text)
+        document.querySelector('.language>ul').appendChild(li)
+    }
+    addOptimizationWay('golang')
+
+    // create the third element and then replace with 2nd numeber ka list
+    const secondLang = document.querySelector('li:nth-child(2)')
+    console.log(secondLang)
+    const newli = document.createElement('li')
+    const add = document.createTextNode('mojo')
+    newli.appendChild(add)
+    document.querySelector('.language>ul').appendChild(newli)
+    // secondLang.replaceWith(newli)
+
+    const firstLang = document.querySelector('li:first-child')
+    firstLang.outerHTML = '<li>typescript</li>'
+    
+    const lastlang = document.querySelector('li:last-child')
+    lastlang.remove()
+</script>
+</html>

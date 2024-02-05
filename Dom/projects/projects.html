@@ -1,0 +1,53 @@
+<!-- color changer -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #grey,#white,#blue,#yellow{
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="canvas">
+        <h1>Color Scheme Switcher</h1>
+        <span class="button" id="grey">grey</span>
+        <span class="button" id="white">white</span>
+        <span class="button" id="blue">blue</span>
+        <span class="button" id="yellow">yellow</span>
+    </div>
+    <h2>Try clicking on one of the colors above 
+        <span>to change the background Color of this page</span>
+    </h2>
+    
+</body>
+<script>
+    const buttons = document.querySelectorAll('.button')
+    const body  = document.querySelector('body')
+
+    buttons.forEach(function(button){
+        button.addEventListener('click',(e)=>
+        {
+            if(e.target.id=='grey')
+            {
+                body.style.backgroundColor = e.target.id
+            }
+            else if(e.target.id=='white')
+            {
+                body.style.backgroundColor = e.target.id
+            }
+            else if(e.target.id=='blue')
+            {
+                body.style.backgroundColor = e.target.id
+            }
+            else{
+                body.style.backgroundColor = e.target.id
+            }
+        })
+    })
+</script>
+</html>
